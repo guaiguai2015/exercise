@@ -6,7 +6,12 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.GradientDrawable
+import android.graphics.drawable.StateListDrawable
 import android.text.TextUtils
+import android.util.StateSet
+import android.util.TypedValue
 
 /**
  * @author wangrulin
@@ -77,6 +82,32 @@ class Utils {
 
             }
             return pkgContext
+        }
+
+        /**
+         * 创建带圆角的drawable
+         */
+        fun createRoundCornerDrawable(unit :Int,fillColor : Int,roundCorner : Float) : Drawable{
+            var gradientDrawable = GradientDrawable()
+            gradientDrawable.setColor(fillColor)
+            if (unit == TypedValue.COMPLEX_UNIT_DIP) {
+                gradientDrawable.cornerRadius = DisplayUtil.dip2px(roundCorner).toFloat()
+            }else {
+                gradientDrawable.cornerRadius = roundCorner
+            }
+
+            return gradientDrawable
+        }
+
+        /**
+         * 创建一个可选择的drawable
+         */
+        fun createSelectorDrawable(normalDrawable : Drawable,pressedDrawable : Drawable,disableDrawable : Drawable) : Drawable{
+            var selectorDrawable = StateListDrawable()
+            selectorDrawable.addState(intArrayOf(android.R.attr.state_pressed), pressedDrawable)
+            selectorDrawable.addState(intArrayOf(android.R.attr.state_enabled), normalDrawable)
+            selectorDrawable.addState(StateSet.WILD_CARD, disableDrawable)
+            return selectorDrawable
         }
     }
 

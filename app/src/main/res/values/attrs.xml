@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="UIButton">
+        <attr name="UIButtonType">
+            <enum name="primary" value="0x01"></enum>
+            <enum name="normal" value="0x02"></enum>
+        </attr>
+
+        <attr name="UIButtonSize">
+            <enum name="large" value="0x01"></enum>
+            <enum name="middle" value="0x02"></enum>
+            <enum name="small" value="0x03"></enum>
+        </attr>
+    </declare-styleable>
+
+
+</resources>
