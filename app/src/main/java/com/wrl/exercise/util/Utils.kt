@@ -12,6 +12,9 @@ import android.graphics.drawable.StateListDrawable
 import android.text.TextUtils
 import android.util.StateSet
 import android.util.TypedValue
+import android.view.View
+import android.view.inputmethod.InputMethodManager
+import com.wrl.exercise.MApplication
 
 /**
  * @author wangrulin
@@ -109,7 +112,22 @@ class Utils {
             selectorDrawable.addState(StateSet.WILD_CARD, disableDrawable)
             return selectorDrawable
         }
+        /**
+         * 展示软键盘
+         */
+        fun showKeyBoard(context: Context?, view: View) {
+            if (context == null) {
+                return
+            }
+            val mInputMethodManager = MApplication.mContext.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            mInputMethodManager.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS)
+            if (mInputMethodManager != null) {
+                view.requestFocus()
+                mInputMethodManager.showSoftInput(view, 0)
+            }
+        }
     }
+
 
 
 }

@@ -4,7 +4,7 @@ import android.util.Log;
 
 public class LogUtil {
 
-    public static boolean showLog = false;
+    public static boolean showLog = true;
     private static String TAG = "logutil---";
 
 

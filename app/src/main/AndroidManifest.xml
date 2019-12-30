@@ -28,7 +28,10 @@
 
         <activity android:name=".AspectActivity"
             android:launchMode="singleTask">
+        </activity>
 
+        <activity android:name=".BottomSheetActivity"
+            android:launchMode="singleTask">
 
         </activity>
     </application>

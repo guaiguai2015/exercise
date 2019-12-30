@@ -1,34 +1,35 @@
 package com.wrl.exercise;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
 
-import com.wrl.exercise.design.factoryDesign.normal.Nokia2000Phone;
-import com.wrl.exercise.design.factoryDesign.normal.Nokia99Phone;
-import com.wrl.exercise.design.factoryDesign.normal.PhoneFactory;
-import com.wrl.exercise.widget.UIButton;
-
+/**
+ * @author wangrulin
+ * @description:
+ * @date :2019-12-30 15:38
+ */
 public class MainActivity extends AppCompatActivity {
 
-    private UIButton button;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button = findViewById(R.id.btn);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"店家",Toast.LENGTH_LONG).show();
-            }
-        });
+    }
 
-        //普通工厂模式
-        PhoneFactory phoneFactory = new PhoneFactory();
-        phoneFactory.createPhone(Nokia99Phone.class);
-        phoneFactory.createPhone(Nokia2000Phone.class);
+    public void click(View view) {
+        switch (view.getId()){
+            case R.id.bottom_sheet:
+                BottomSheetActivity.start(this);
+                break;
+
+            case R.id.aspect_btn:
+                AspectActivity.start(this);
+                break;
+
+                default:
+                    break;
+        }
     }
 }

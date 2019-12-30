@@ -1,0 +1,67 @@
+{
+  "channelInfoList": [
+    {
+      "channel": "1",
+      "alias": "官方"
+    },
+    {
+      "channel": "2",
+      "alias": "百度"
+    },
+    {
+      "channel": "3",
+      "alias": "应用宝"
+    },
+    {
+      "channel": "4",
+      "alias": "360"
+    },
+    {
+      "channel": "5",
+      "alias": "搜狗"
+    },
+    {
+      "channel": "6",
+      "alias": "华为"
+    },
+    {
+      "channel": "7",
+      "alias": "小米"
+    },
+    {
+      "channel": "8",
+      "alias": "OPPO"
+    },
+    {
+      "channel": "9",
+      "alias": "联想"
+    },
+    {
+      "channel": "10",
+      "alias": "魅族"
+    },
+    {
+      "channel": "11",
+      "alias": "金立"
+    },
+    {
+      "channel": "12",
+      "alias": "VIVO"
+    },
+    {
+      "channel": "13",
+      "alias": "三星"
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
